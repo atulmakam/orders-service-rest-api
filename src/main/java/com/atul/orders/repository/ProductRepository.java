@@ -19,7 +19,16 @@ public class ProductRepository {
     }
 
     public List<Product> getAllProducts() {
+        getTotalCost();
         return list;
+    }
+
+    public double getTotalCost(){
+        double total=0;
+        for (Product p: list){
+            total+=p.getQuantity()*p.getPrice();
+        }
+        return total;
     }
 
     public Product findById(int id){
@@ -69,4 +78,5 @@ public class ProductRepository {
         list.set(idx, product);
         return product1;
     }
+
 }
