@@ -1,5 +1,7 @@
 package com.atul.orders.service;
 
+import com.atul.orders.model.Product;
+import com.atul.orders.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
