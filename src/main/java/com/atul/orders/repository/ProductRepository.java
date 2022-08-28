@@ -28,6 +28,7 @@ public class ProductRepository {
         for (Product p: list){
             total+=p.getQuantity()*p.getPrice();
         }
+        System.out.println("Total cost of the order is:$"+total);
         return total;
     }
 
