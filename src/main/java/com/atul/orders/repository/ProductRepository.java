@@ -24,12 +24,22 @@ public class ProductRepository {
     }
 
     public String orderSummary(){
-        double total=0;
+        double totalPrice=0;
+        int totalItems=0;
         for (Product p: list){
-            total+=p.getQuantity()*p.getPrice();
+            totalItems+=p.getQuantity();
         }
-        System.out.println("Total cost of the order is:$"+total);
-        return String.valueOf(total);
+        for (Product p: list){
+            totalPrice+=p.getQuantity()*p.getPrice();
+        }
+        String ti = "Total number of items:";
+        String totalItemsStr = String.valueOf(totalItems);
+        String tc= "Total cost of the order is:$";
+        String orderTotalStr = String.valueOf(totalPrice);
+        String li = "The list of items are:";
+        String listItemsStr = String.valueOf(list);
+        String summary = li+"\n"+listItemsStr+"\n"+ti+totalItemsStr+"\n"+tc+orderTotalStr;
+        return summary;
     }
 
     public Product findById(int id){
