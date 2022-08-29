@@ -20,6 +20,10 @@ public class ProductService {
         return repository.getAllProducts();
     }
 
+    public String getSummary() {
+        return repository.orderSummary();
+    }
+
     public Product getProductById(int id) {
         return repository.findById(id);
     }

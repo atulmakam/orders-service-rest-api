@@ -19,17 +19,17 @@ public class ProductRepository {
     }
 
     public List<Product> getAllProducts() {
-        getTotalCost();
+        orderSummary();
         return list;
     }
 
-    public double getTotalCost(){
+    public String orderSummary(){
         double total=0;
         for (Product p: list){
             total+=p.getQuantity()*p.getPrice();
         }
         System.out.println("Total cost of the order is:$"+total);
-        return total;
+        return String.valueOf(total);
     }
 
     public Product findById(int id){
