@@ -79,7 +79,7 @@ public class ProductTest {
         field.setAccessible(true);
         field.set(product, 100);
 
-        final int result = product.getQuantity();
+        final float result = product.getQuantity();
 
         assertThat(result).isEqualTo(100);
     }

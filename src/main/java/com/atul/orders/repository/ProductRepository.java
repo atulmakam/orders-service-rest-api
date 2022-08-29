@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Repository
@@ -30,7 +31,12 @@ public class ProductRepository {
             totalItems+=p.getQuantity();
         }
         for (Product p: list){
-            totalPrice+=p.getQuantity()*p.getPrice();
+            if(Objects.equals(p.getName(), "apple") && p.getQuantity()%2==0){
+                totalPrice+=p.getQuantity()*p.getPrice()/2;
+            } else if (Objects.equals(p.getName(), "orange") && p.getQuantity()%3==0) {
+                totalPrice+=((p.getQuantity()*2/3))*p.getPrice();
+            }
+            else totalPrice+=p.getQuantity()*p.getPrice();
         }
         String ti = "Total number of items:";
         String totalItemsStr = String.valueOf(totalItems);

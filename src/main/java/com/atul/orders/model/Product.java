@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 public class Product {
     private int id;
     private String name;
-    private int quantity;
+    private float quantity;
     private double price;
 
     public int getId() {
@@ -29,11 +29,11 @@ public class Product {
         this.name = name;
     }
 
-    public int getQuantity() {
+    public float getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(float quantity) {
         this.quantity = quantity;
     }
 
